@@ -1,11 +1,16 @@
 :root {
-  --bg: #050b18;                       
-  --card: rgba(20, 40, 80, 0.25);      
-  --card-border: rgba(120,180,255,0.25);
-  --card-border2: rgba(120,180,255,0.08);
-  --text: #e8f1ff;
-  --muted: #8fa9d6;
-  --accent: #3fdcff;                  
+  --bg: #050014;
+  --bg-2: #0b0026;
+
+  --card: rgba(120, 0, 255, 0.12);
+  --card-border: rgba(190, 120, 255, 0.45);
+  --card-border2: rgba(190, 120, 255, 0.15);
+
+  --text: #f4eaff;
+  --muted: #b48cff;
+
+  --accent: #b400ff;   /* roxo neon */
+  --accent-2: #00f0ff; /* cyan neon */
 }
 
 
@@ -18,7 +23,11 @@ body {
   position: relative;
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #0b1d3a, var(--bg));
+  background:
+    radial-gradient(circle at top, rgba(180,0,255,0.25), transparent 60%),
+    radial-gradient(circle at bottom, rgba(0,240,255,0.15), transparent 55%),
+    linear-gradient(180deg, var(--bg-2), var(--bg));
+
 
   color: var(--text);
   display: flex;
@@ -49,11 +58,16 @@ body {
 }
 
 .card {
+  animation: cardGlitch 12s infinite;
+
+  padding: 20px;
   background: var(--card);
   border: 1px solid var(--card-border);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
   border-radius: 16px;
-  padding: 20px;
+  box-shadow:
+    0 0 20px rgba(180,0,255,0.25),
+    inset 0 0 20px rgba(180,0,255,0.08);
 }
 
 .card h2 {
@@ -65,9 +79,12 @@ body {
 
 .card .value {
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-shadow:
+    0 0 8px rgba(0,240,255,0.8),
+    0 0 16px rgba(0,240,255,0.5);
 }
-
 .muted {
   font-size: 14px;
   color: var(--muted);
@@ -109,18 +126,26 @@ body {
   padding: 16px 20px;
   font-size: 16px;
   border-radius: 999px;
-  border: none;
+
   outline: none;
-  background: var(--card);
+ 
   color: var(--text);
   backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
+  background: rgba(90, 0, 160, 0.25);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 0 25px rgba(180,0,255,0.35);
 }
 
 .search input::placeholder {
   color: var(--muted);
 }
 
+.search input:focus {
+  box-shadow:
+    0 0 25px rgba(180,0,255,0.7),
+    0 0 45px rgba(0,240,255,0.5);
+}
 
 /* ===== Midle cards ===== */
 .rodape {
@@ -142,10 +167,18 @@ body {
 }
 
 .shortcut {
+    background: linear-gradient(
+    135deg,
+    rgba(120,0,255,0.25),
+    rgba(0,240,255,0.12)
+  );
+  border: 1px solid var(--card-border);
+  box-shadow: 0 0 20px rgba(180,0,255,0.35);
+
   text-decoration: none;
   color: var(--text);
-  background: var(--card);
-  border: 1px solid var(--card-border);
+
+
   border-radius: 16px;
   padding: 20px 10px;
   text-align: center;
@@ -154,10 +187,13 @@ body {
 }
 
 .shortcut:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 0 30px rgba(180,0,255,0.9),
+    0 0 60px rgba(0,240,255,0.6);
   background: rgb(56, 0, 160);
   border-color: #3fdcff;
-  box-shadow: 0 10px 30px rgba(56, 0, 160, 0.5);
+
 
 }
 
@@ -204,13 +240,13 @@ body {
   height: 15vh;
   opacity: 0.5;
 
-background: linear-gradient(
-  to bottom,
-  rgba(0,0,0,0) 0%,
-  #3fdcff 70%,
-  #9befff 100%
-);
-filter: drop-shadow(0 0 6px #3fdcff);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    var(--accent),
+    var(--accent-2)
+  );
+  
 
 
   animation: drop 25s infinite;
@@ -237,4 +273,36 @@ filter: drop-shadow(0 0 6px #3fdcff);
   to {
     top: 110%;
   }
+}
+
+/**testando efeito **/
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.02) 1px,
+      rgba(0,0,0,0) 2px,
+      rgba(0,0,0,0) 4px
+    );
+  mix-blend-mode: overlay;
+  animation: scanmove 8s linear infinite;
+}
+
+@keyframes scanmove {
+  from { background-position-y: 0; }
+  to   { background-position-y: 100px; }
+}
+
+
+
+
+@keyframes cardGlitch {
+  0%, 97%, 100% { transform: translate(0); }
+  98% { transform: translate(-2px, 1px); }
+  99% { transform: translate(2px, -1px); }
 }

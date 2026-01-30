@@ -1,3 +1,33 @@
+const diasSemana = [
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado"
+  ];
+
+  const hoje = new Date();
+  const diaSemana = diasSemana[hoje.getDay()];
+
+const h2 = document.getElementById("dia");
+  const percentual = document.getElementById("percentual");
+  const barra = document.getElementById("barra");
+
+
+  if (diaSemana == "Sábado" || diaSemana == "Domingo"){
+    const cardDaSemana = document.getElementById("cardSemana")
+    h2.textContent = "Fim de semana";
+    percentual.style.display = "none";
+    barra.style.display = "none";
+  } else{
+     h2.textContent = diaSemana;
+  }
+
+ 
+
+
 // IP (placeholder) 
 //document.getElementById('ip').textContent = '127.0.0.1';
 fetch('https://api.ipify.org?format=json')
@@ -93,3 +123,4 @@ if (searchInput) {
     }
   });
 }
+

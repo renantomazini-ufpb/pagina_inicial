@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Início</title>
-
+    <link rel="icon" type="image/x-icon" href="/assets/favicon-32x32.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
   <div class="top-cards">
     <div class="card">
       <h2>IP</h2>
-      <div class="value" id="ip">Carregando…</div>
+      <div class="value" id="ip">Carregando...</div>
       <div class="muted" id="city">Carregando...</div>
     </div>
 
@@ -25,8 +25,8 @@
       <div class="muted" id="data"></div>
     </div>
 
-    <div class="card">
-      <h2>Dia útil (08–17)</h2>
+    <div class="card" id="cardSemana">
+      <h2 id = "dia">Carregando...</h2>
       <div class="value" id="percentual">0%</div>
       <div class="progress">
         <span id="barra"></span>
@@ -40,11 +40,12 @@
 
   <div class="search-wrapper">
     <div class="search">
-      <input type="text" placeholder="Digite para pesquisar…" id="search">
+      <input type="text" placeholder="Digite para pesquisar no Google…" id="search">
     </div>
   </div>
-
   
+
+  <h1>Atalhos de trabalho</h1>
   <!-- SHORTCUTS -->
   <div class="shortcuts">
     <a class="shortcut" href="https://sougov.sigepe.gov.br/sougov/RegistroPonto" target="_blank">
@@ -61,9 +62,9 @@
       <span>Gmail</span>
     </a>
 
-    <a class="shortcut" href="https://www.cpt.ufpb.br/wp-admin/" target="_blank">
+    <a class="shortcut" href="https://www.cpt.ufpb.br/" target="_blank">
       <div class="icon">📰</div>
-      <span>Controle site</span>
+      <span>Site CPT</span>
     </a>
 
     <a class="shortcut" href="https://drive.ufpb.br/" target="_blank">
@@ -116,12 +117,12 @@
       <span>Cisco Academy</span>
     </a>
 
-    <a class="shortcut" href="https://www.netacad.com/" target="_blank">
+    <a class="shortcut" href="https://downdetector.com.br/" target="_blank">
       <div class="icon">📈</div>
       <span>Down Detector</span>
     </a>
 
-    <a class="shortcut" href="https://www.escolavirtual.gov.br/programa/276" target="_blank">
+    <a class="shortcut" href="https://www.escolavirtual.gov.br" target="_blank">
       <div class="icon">📘</div>
       <span>Escola Virtual Gov.br</span>
     </a>
@@ -140,6 +141,11 @@
       <div class="icon">💬</div>
       <span>Telegram</span>
     </a>
+
+    <a class="shortcut" href="folga.html" target="_blank">
+      <div class="icon">🧩</div>
+      <span>Página da folga</span>
+    </a>
   </div>
 
 
@@ -148,7 +154,9 @@
 
 </div>
     <div class="rodape">
-
+        <table>
+            <td>
+        
             <h2 style="margin: 0;">Renan Tomazini</h2>
             <p style="margin: 0;">Técnico em Tecnologia da Informação</p>
             <p style="margin: 0;"><strong>Superintendência de Tecnologia da Informação (STI)</strong></p>
@@ -160,8 +168,12 @@
             <br>
 
             <img src="https://www.ufpb.br/wp-content/themes/ufpb-main/img/marca-70anos.png" alt="UFPB" width="140">
-
-
+            </td>
+            
+                
+            
+        </table>    
+        <img src="assets/raccoon_lg.png" style="text-align: right;">
 
     </div>
 

@@ -150,13 +150,21 @@ body {
   padding: 20px 10px;
   text-align: center;
   backdrop-filter: blur(10px);
-  transition: transform 0.2s ease, background 0.2s ease;
+  /**transition: transform 0.2s ease, background 0.2s ease;
+**/
+    transition: 
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+
 }
+
 
 .shortcut:hover {
   transform: translateY(-4px);
-  background: rgba(0, 0, 110, 0.5);
+  background: rgba(20, 20, 160, 1);
   border-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 255, 0.35);
 }
 
 .shortcut .icon {

@@ -84,7 +84,7 @@ body {
   overflow: hidden;
 }
 
-.progress span {
+.progress p {
   display: block;
   height: 100%;
   width: 0%;
@@ -156,8 +156,8 @@ body {
 .shortcut:hover {
   transform: translateY(-4px);
   background: rgb(56, 0, 160);
-
   border-color: #3fdcff;
+  box-shadow: 0 10px 30px rgba(56, 0, 160, 0.5);
 
 }
 

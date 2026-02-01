@@ -1,0 +1,136 @@
+:root {
+  --bg: #080d1a;
+  --bg-2: #0b1020;
+
+  --card: rgba(255,255,255,0.07);
+  --card-border: rgba(255,255,255,0.14);
+  --card-border2: rgba(255,255,255,0.06);
+
+  --text: #ffffff;
+  --muted: #aab4c3;
+
+  --accent: #4da3ff;
+}
+
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(77,163,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77,163,255,0.06) 1px, transparent 1px),
+    radial-gradient(circle at top, #121c3a, var(--bg-2));
+
+  background-size:
+    32px 32px,
+    32px 32px,
+    100% 100%;
+
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== TÍTULO ===== */
+h1 {
+  margin: 40px 0 32px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ===== SHORTCUTS ===== */
+.shortcuts {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 24px 64px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+}
+
+.shortcut {
+  text-decoration: none;
+  color: var(--text);
+
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+
+  padding: 24px 16px;
+  text-align: center;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.shortcut:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.10);
+  border-color: var(--accent);
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(77,163,255,0.25);
+}
+
+.shortcut .icon {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.shortcut span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  margin-top: auto; /* 🔑 ESSENCIAL */
+  width: 100%;
+  background: #000;
+  padding: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* ===== MASCOTE ===== */
+.rodape-mascote {
+  max-height: 80px;
+  opacity: 0.9;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+    margin-top: 32px;
+  }
+
+  .rodape {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rodape-mascote {
+    align-self: flex-end;
+  }
+}

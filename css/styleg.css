@@ -81,12 +81,20 @@ h1 {
 
 .shortcut:hover {
   transform: translateY(-4px);
+  background: rgb(0, 0, 0);
+  border-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/**
+.shortcut:hover {
+  transform: translateY(-4px);
   background: rgba(255,255,255,0.10);
   border-color: var(--accent);
   box-shadow:
     0 8px 24px rgba(0,0,0,0.35),
     0 0 0 1px rgba(77,163,255,0.25);
-}
+} **/
 
 .shortcut .icon {
   font-size: 30px;
